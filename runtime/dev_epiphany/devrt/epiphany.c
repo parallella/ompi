@@ -49,7 +49,7 @@ extern void *_kernelFunc_(void *__arg, void *__decl_arg);
 extern void *_bindFunc_(void * __decl_data);
 /*************************************************************************************/
 
-void __attribute__((interrupt)) bar_wake_isr(int signum)
+void __attribute__((interrupt)) bar_wake_isr()
 {
 	e_ctimer_stop(E_CTIMER_0);
 	return;
