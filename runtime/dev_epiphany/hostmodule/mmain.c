@@ -504,7 +504,8 @@ void  hm_offload(void *device_info, void *(*host_func)(void *), void *dev_data,
 
 	e_reset_group(&(pll_gl.dev[pe_row][pe_col]));
 	lock(&offload_lock);
-	e_load(obj_filename, &(pll_gl.dev[pe_row][pe_col]), 0, 0, E_TRUE);
+//	e_load(obj_filename, &(pll_gl.dev[pe_row][pe_col]), 0, 0, E_TRUE);
+	my_e_load_group(obj_filename, &(pll_gl.dev[pe_row][pe_col]), 0, 0, 1, 1, E_TRUE);
 	unlock(&offload_lock);
 	hyield();
 #ifdef HOST_VERBOSE
